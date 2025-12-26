@@ -472,7 +472,7 @@ nav {
   }
 }
 .social-image {
-  display: none;
+  width: 100px;
 }
 @media (min-width: 1158px) {
   .info-container-image {
@@ -498,13 +498,7 @@ nav {
     text-align: start;
   }
 }
-@media only screen and (min-width: 1158px) {
-  .title {
-    text-align: start;
-    font-size: 20px;
-    font-weight: 500;
-  }
-}
+
 /* #team section */
 .team-section {
   background-color: var(--cloud);
@@ -714,7 +708,9 @@ nav {
   letter-spacing: 0.02em;
   color: var(--slate);
 }
+
 /*Footer*/
+
 .footer {
   background-color: var(--navy-blue);
   padding-top: 100px;
@@ -731,13 +727,36 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: 72px;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) {
   .footer-container {
     flex-direction: row;
-    flex-wrap: wrap;
     gap: 72px 24px;
     padding-left: 108px;
+  }
+  .subscribe-container {
+    display: block;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 72px 24px;
+    padding-left: 108px;
+  }
+  .footer-container-text,
+  .footer-social-container {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .subscribe-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -748,7 +767,10 @@ nav {
   }
 }
 .footer-container-text {
-  margin-right: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .footer-logo {
   font-family: "Raleway", sans-serif;
@@ -759,7 +781,7 @@ nav {
   letter-spacing: 0.03em;
   color: var(--iris);
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   margin-bottom: 16px;
 }
 .footer-logo-one {
@@ -772,11 +794,12 @@ nav {
   line-height: 1.5;
   font-size: 16px;
   letter-spacing: 0.02em;
-  text-align: center;
+  justify-self: center;
 }
 @media only screen and (min-width: 768px) {
   .footer-container-text {
     text-align: start;
+    justify-self: center;
   }
   .footer-social {
     margin-bottom: auto;
@@ -799,12 +822,16 @@ nav {
     margin: 0 0 auto auto;
   }
 }
-.social-container {
-  margin-right: 80px;
+.footer-social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .footer-social-list {
   gap: 16px;
-  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
@@ -820,6 +847,10 @@ nav {
   margin-bottom: 16px;
   letter-spacing: 0.02em;
 }
+.subscribe-container {
+  flex-direction: column;
+  width: 100%;
+}
 .subscribe-text {
   color: var(--white);
   font-weight: 500;
@@ -827,23 +858,45 @@ nav {
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
+  justify-self: center;
 }
 .subscribe-form {
   display: flex;
   gap: 24px;
+  flex-direction: column;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .subscribe-text {
+    display: flex;
+    justify-self: auto;
+  }
+  .subscribe-form {
+    flex-direction: row;
+  }
+}
+
+.subscribe-label {
+  width: 100%;
 }
 .subscribe-input {
-  border: 1px solid var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
   padding-left: 16px;
   border-radius: 4px;
   width: 100%;
+  max-width: 264px;
   height: 40px;
   background-color: transparent;
   color: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+@media only screen and (min-width: 768px) {
+  .subscribe-input {
+    width: 264px;
+  }
 }
 .subscribe-input:hover,
 .subscribe-input:focus {
@@ -873,6 +926,25 @@ nav {
 }
 .footer-button:hover {
   background-color: var(--green);
+}
+@media only screen and (min-width: 768px) {
+  .footer-button {
+    margin: 0;
+  }
+  .subscribe-label {
+    width: 264px;
+  }
+  .footer-container-text {
+    align-items: normal;
+  }
+  .footer-social-list {
+    gap: 24px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .footer-social-container {
+    margin-right: 80px;
+  }
 }
 .frame-image {
   fill: var(--white);
