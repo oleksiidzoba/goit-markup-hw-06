@@ -152,6 +152,10 @@ ul {
 .logo-1 {
   color: var(--navy-blue);
 }
+.navigation {
+  align-items: center;
+  width: 100%;
+}
 @media only screen and (max-width: 767.98px) {
   .nav-list {
     flex-grow: 1;
@@ -174,14 +178,20 @@ ul {
   height: 24px;
   margin-left: auto;
 }
+@media only screen and (max-width: 767.98px) {
+  .mobile-menu-button {
+    margin-left: auto;
+  }
+}
 @media (min-width: 767.98px) {
   .mobile-menu-button {
     display: none;
   }
+  .navigation {
+    width: auto;
+  }
 }
-.navigation {
-  align-items: center;
-}
+
 nav {
   display: flex;
 }
@@ -229,7 +239,7 @@ nav {
   gap: 40px;
 }
 @media only screen and (max-width: 767.98px) {
-  .contacts,
+  .contacts-wrapper,
   .nav-list {
     display: none;
   }
@@ -366,7 +376,7 @@ nav {
       url(../images/people-office-x2.jpg);
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1157.98) {
   .hero-cont {
     max-width: 768px;
     background-image: linear-gradient(
@@ -387,7 +397,7 @@ nav {
   }
 }
 @media only screen and (min-width: 1158px) {
-  .hero-cont {
+  .title-section {
     width: 100%;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
@@ -397,7 +407,7 @@ nav {
     padding: 188px 0;
   }
   @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    .hero-cont {
+    .title-section {
       width: 100%;
       background-image: linear-gradient(
           rgba(46, 47, 66, 0.7),
@@ -474,6 +484,11 @@ nav {
 .social-image {
   width: 100px;
 }
+@media (max-width: 1157.98px) {
+  .info-container-image {
+    display: none;
+  }
+}
 @media (min-width: 1158px) {
   .info-container-image {
     background-color: var(--cloud);
@@ -497,6 +512,17 @@ nav {
   .info-title {
     text-align: start;
   }
+  .info-sub-title {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .info-sub-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
 }
 
 /* #team section */
@@ -512,7 +538,7 @@ nav {
 }
 
 .team-title {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
   letter-spacing: 0.02em;
@@ -555,6 +581,7 @@ nav {
   box-sizing: border-box;
 }
 .team-text-container {
+  padding-top: 32px;
   padding-bottom: 32px;
 }
 .team-sub-title {
@@ -713,12 +740,10 @@ nav {
 
 .footer {
   background-color: var(--navy-blue);
-  padding-top: 100px;
-  padding-bottom: 100px;
 }
 @media only screen and (min-width: 1158px) {
   .footer {
-    padding: 100px 0;
+    padding: 100px 156px;
   }
 }
 .footer-container {
@@ -728,11 +753,12 @@ nav {
   align-items: center;
   gap: 72px;
   justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 @media only screen and (min-width: 768px) {
   .footer-container {
     flex-direction: row;
-    gap: 72px 24px;
     padding-left: 108px;
   }
   .subscribe-container {
@@ -771,6 +797,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 264px;
 }
 .footer-logo {
   font-family: "Raleway", sans-serif;
@@ -813,7 +840,7 @@ nav {
 }
 @media only screen and (min-width: 1158px) {
   .footer-container-text {
-    margin-right: 120px;
+    width: 264px;
   }
   .footer-social {
     margin-right: 0px;
@@ -942,8 +969,8 @@ nav {
   }
 }
 @media only screen and (min-width: 1158px) {
-  .footer-social-container {
-    margin-right: 80px;
+  .subscribe-container {
+    width: auto;
   }
 }
 .frame-image {
